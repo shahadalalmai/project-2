@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  #resources :appointments
+  resources :appointments
   # consider substituting the below lines with resources
   #get '/home/appointment/index'
   #get '/home/:id/appointment/new', to: "appointment#new"
@@ -16,9 +16,9 @@ Rails.application.routes.draw do
     passwords: 'patients/passwords', confirmations: 'patients/confirmations'}
 
 
-  resources :patients do
-      resources :appointments
-  end
+  # resources :patients do
+  #     resources :appointments
+  # end
 
   get "/home", to: "home#index", as: "home"
 

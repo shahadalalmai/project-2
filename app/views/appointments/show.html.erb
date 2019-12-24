@@ -1,0 +1,12 @@
+<h1>Appointment#show</h1>
+
+
+<h3> Patient Appointment </h3>
+    
+        <p> Appt number: <%= @appt.id%> </p>
+        <p> Clinic Type: <%= @appt.clinic%> </p>
+        <p> Date: <%= @appt.date%> </p>
+        <p> Time: <%= @appt.time.to_s[11, 5]%> </p>
+    <%= link_to "Cancel", appointment_path(@appt.id), method: :delete%> || <%= link_to "Reschedule", edit_appointment_path(@appt.id)%>
+    <hr>
+   

@@ -1,7 +1,7 @@
 <h1>Welcome <%= @patient.name %></h1>
 <h3>MRN: <%= @patient.id%></h3>
 
-<h3>Patiient Health Record</h3>
+<h3>Patient Health Record</h3>
   
     <% if @patient.gender == 0 %>
             <p>Gender: Male</p>
@@ -24,10 +24,10 @@
         <p> Clinic Type: <%= apt.clinic%> </p>
         <p> Date: <%= apt.date%> </p>
         <p> Time: <%= apt.time.to_s[11, 5]%> </p>
-    <%= link_to "Cancel", patient_appointment_path(current_patient.id, apt.id), method: :delete%> || <%= link_to "Reschedule", edit_patient_appointment_path(current_patient.id, apt.id)%>
+    <%= link_to "Cancel", appointment_path(apt.id), method: :delete%> || <%= link_to "Reschedule", edit_appointment_path(apt.id)%>
     <hr>
     <% end %>
 
 
-<%= link_to "Book New Appt", new_patient_appointment_path(current_patient)%><br>
+<%= link_to "Book New Appt", new_appointment_path%><br>
 <%= link_to "Sign Out", destroy_patient_session_path, method: :delete%>
