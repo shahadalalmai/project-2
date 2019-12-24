@@ -1,0 +1,28 @@
+<h1>Appointment#new</h1>
+<p>Find me in app/views/appointment/new.html.erb</p>
+
+
+<%= form_for @appt, url: {action: "create"} do |f| %>
+    <%= f.hidden_field :patient_id, :value => current_patient.id %>
+    
+    <%= f.label :clinic, 'Clinic Type'%><br>
+    <%= f.select(:clinic, options_for_select([["Dentistry","Dentistry"],["Dermatology","Dermatology"],["Family Medicine","Family Medicine"],["Gynecology","Gynecology"],["Ophthalmology","Ophthalmology"],["Pediatric","Pediatric"],["Urology","Urology"]], params[:clinic] )) %>
+
+    <br>
+
+
+    <%= f.label :date, 'Date'%><br>
+    <%= f.text_field :date, type: 'date', min: "2019-12-01", max: "2020-02-15" %><br>
+
+    <%= f.label :time, 'Time'%><br>
+    <%= f.text_field :time , type: 'time', min: '07:00 AM', max: '05:00 PM'%><br>
+
+    <br>
+
+    <%= f.submit "Submit"%>
+
+    <br>
+    
+    <%= link_to "Back", home_path%>
+
+<% end %>

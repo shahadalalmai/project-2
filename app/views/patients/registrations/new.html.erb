@@ -4,12 +4,12 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %><br/>
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %><br/>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -22,16 +22,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %><br/>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age %> <!-- number field type -->
+    <%= f.label :age %><br/>
+    <%= f.number_field :age, min: 1, max: 100 %> <!-- number field type -->
   </div>
 
   <div class="field">
+    <%= f.label :gender %><br/>
     <%= f.radio_button :gender, 0 %> <!-- radio button type -->
     <%= f.label :gender, "Male" %>
     <%= f.radio_button :gender, 1 %>
@@ -39,23 +40,23 @@
   </div>
 
   <div class="field">
-    <%= f.label :blood_type %><br />
-    <%= f.text_field :blood_type %> <!-- text field type -->
+    <%= f.label :blood_type %><br/>
+    <%= f.text_field :blood_type, placeholder: "ex: A+"%> <!-- text field type -->
   </div>
 
   <div class="field">
-    <%= f.label :allergies %><br />
-    <%= f.text_field :allergies %> <!-- text field type -->
+    <%= f.label :allergies %><br/>
+    <%= f.text_field :allergies, placeholder: "none"%> <!-- text field type -->
   </div>
 
   <div class="field">
-    <%= f.label :weight %><br />
-    <%= f.number_field :weight %> <!-- number field type -->
+    <%= f.label :weight %><br/>
+    <%= f.number_field :weight, min: 0, max: 250 %> <!-- number field type -->
   </div>
 
   <div class="field">
-    <%= f.label :height %><br />
-    <%= f.number_field :height %> <!-- number field type -->
+    <%= f.label :height %><br/>
+    <%= f.number_field :height, min: 10, max: 200 %> <!-- number field type -->
   </div>
 
   <div class="actions">

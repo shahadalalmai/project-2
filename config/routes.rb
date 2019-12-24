@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :appointments
+  #resources :appointments
   # consider substituting the below lines with resources
-  # get 'appointment/index'
-  # get 'appointment/new'
-  # get 'appointment/edit'
+  #get '/home/appointment/index'
+  #get '/home/:id/appointment/new', to: "appointment#new"
+  #get 'appointment/edit'
 
   # devise_for :patients We commented this, because we are going to redefine our routes according to our new controller Patients
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -16,7 +16,12 @@ Rails.application.routes.draw do
     passwords: 'patients/passwords', confirmations: 'patients/confirmations'}
 
 
+  resources :patients do
+      resources :appointments
+  end
+
   get "/home", to: "home#index", as: "home"
+
 
   root to: "home#index"
 end
